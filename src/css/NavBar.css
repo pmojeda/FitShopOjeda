@@ -4,12 +4,12 @@
 nav a {
     text-decoration:none;
     color:inherit;
-    font-size:14px;
+    font-size:15px;
     } 
 
 nav li {
     display:inline-block;
-    width:15%;
+    width:14%;
     padding:5px 10px;
     background-color:rgb(252, 143, 143);
     /*border:1px solid #000;*/

@@ -1,14 +1,12 @@
 import React from "react";
 import "../css/NavBar.css"
 import { Button } from '@mui/material';
-import logo from "../img/logoTienda.png";
- 
+import CartWidget from "./CartWidget"
+
 const NavBar = () => {
     return (
         <>   
-            
-            <nav className="container">
-            
+            <nav className="container">            
                 <ul>   
                     <li><h1>Tienda FitShop</h1></li>                     
                     <li><Button variant="outlined" color="secondary" >Inicio</Button></li>
@@ -16,6 +14,7 @@ const NavBar = () => {
                     <li><a href="#">Accesorios</a></li>
                     <li><a href="#">Yoga y Pilates</a></li>
                     <li><Button variant="outlined" color="secondary">Login</Button></li>
+                    <li><CartWidget/></li>
                 </ul>
             </nav>
         </>
