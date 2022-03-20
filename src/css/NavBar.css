@@ -1,0 +1,29 @@
+/*{margin:0;padding:0;box-sizing:border-box;font-size:0;}*/
+*{margin:0;padding:0;box-sizing:border-box;}
+            
+nav a {
+    text-decoration:none;
+    color:inherit;
+    font-size:14px;
+    } 
+
+nav li {
+    display:inline-block;
+    width:15%;
+    padding:5px 10px;
+    background-color:rgb(252, 143, 143);
+    /*border:1px solid #000;*/
+    text-align:center;
+    color:#fff;
+    }
+
+nav li a:hover{
+    background-color:rgb(243, 190, 190);
+    color:#000;
+    }
+
+.container{
+    background-color:rgb(252, 143, 143); 
+    height: 60px;  
+}
+
