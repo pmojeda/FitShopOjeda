@@ -1,24 +1,18 @@
 import React, { Component } from "react";
-/*
+import ItemCount from "./ItemCount";
+
+const onAddParent = (cantidad) => {
+    console.log("Se ejecutó el onAddParent " + cantidad);
+}
+
 const ItemListContainer = ({greeting}) => {
     return (
         <>
             <h1>{greeting}</h1>
-            <h2>Catálogos disponibles...</h2>
+
+            <ItemCount stock={5} initial={1} onAdd={onAddParent}/>
         </>
     )
-}
-*/
-
-class ItemListContainer extends Component{
-    render() {
-        return (
-            <>
-                <h1>{this.props.greeting}</h1>
-                <h2>Catálogos disponibles...</h2>
-            </>
-            )
-    }
 }
 
 export default ItemListContainer;
