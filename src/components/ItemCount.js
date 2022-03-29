@@ -12,8 +12,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const handlerClickSumar = () => {
         if (cantidad < stock)
         {
-            setCantidad(cantidad + 1);
-            onAdd(cantidad + 1);
+            setCantidad(cantidad + 1);            
         }
         else    
         {
@@ -30,6 +29,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
         else    
         {
             console.log('La cantidad ya es cero');
+        }
+    }
+
+    const agregarAlCarrito = () => {
+        if(cantidad > 0){
+            onAdd(cantidad);
         }
     }
 
@@ -51,7 +56,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 </IconButton>
                 </Box>
 
-                <Button variant="outlined" color="secondary" >Agregar al Carrito</Button>
+                <Button variant="outlined" color="secondary" onClick={agregarAlCarrito} >Agregar al Carrito</Button>
             </Card>
         </>
     )
