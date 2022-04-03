@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCartOutlined';
 const CartWidget = () => {
     return (
         <>
-            <ShoppingCartIcon color="secondary" fontSize="large" />
+            <ShoppingCartIcon color="secondary" fontSize="medium" />
         </>
     )
 }

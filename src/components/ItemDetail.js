@@ -4,7 +4,6 @@ import { Card } from '@mui/material';
 import { Box } from "@mui/system";
 import Typography from '@mui/material/Typography';
 
-
 const ItemDetail = ({product}) => {
     return (
         <>
