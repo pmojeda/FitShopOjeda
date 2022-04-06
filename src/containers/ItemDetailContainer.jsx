@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail";
+import ItemDetail from "../components/ItemDetail";
 import {initialProducts} from "../mocks/InitialProducts";
 import {useParams} from "react-router-dom";
 

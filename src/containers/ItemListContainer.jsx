@@ -1,15 +1,15 @@
 import React, { Component, useEffect, useState } from "react";
-/*import ItemCount from "./ItemCount";*/
+/*import ItemCount from "../components/ItemCount";*/
 import ItemList from "./ItemList";
 import Typography from '@mui/material/Typography';
 import {useParams} from "react-router-dom";
 import {initialProducts} from "../mocks/InitialProducts";
 
-const onAddParent = (cantidad) => {
-    console.log(`Se agregó al carrito ${cantidad} productos`);
-}
-
 const ItemListContainer = ({greeting}) => {
+    const onAddParent = (cantidad) => {
+        console.log(`Se agregó al carrito ${cantidad} productos`);
+    }
+
     const [products, setProducts] = useState([]);
 
     const {categoryId} = useParams();
