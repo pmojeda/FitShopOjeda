@@ -19,7 +19,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
             console.log('No hay más stock');
         }
     }
-
     
     const handlerClickRestar = () => {
         if (cantidad > 0)
@@ -40,20 +39,19 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     return (
         <>
-            <Card variant="outlined" sx={{minWidth: 100, maxWidth: 200}}>
-                <h3 >Colchoneta para Yoga</h3>
-                <br/>
-
+            <Card sx={{minWidth: 100, maxWidth: 200}}>
                 <Box variant="Card">
-                <IconButton onClick={handlerClickRestar} >
-                    <RemoveIcon/>
-                </IconButton>
+                    Cantidad: 
 
-                {cantidad}
+                    <IconButton onClick={handlerClickRestar} >
+                        <RemoveIcon/>
+                    </IconButton>
 
-                <IconButton onClick={handlerClickSumar} >
-                    <AddIcon/>
-                </IconButton>
+                    {cantidad}
+
+                    <IconButton onClick={handlerClickSumar} >
+                        <AddIcon/>
+                    </IconButton>
                 </Box>
 
                 <Button variant="outlined" color="secondary" onClick={agregarAlCarrito} >Agregar al Carrito</Button>

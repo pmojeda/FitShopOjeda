@@ -6,10 +6,6 @@ import {useParams} from "react-router-dom";
 import {initialProducts} from "../mocks/InitialProducts";
 
 const ItemListContainer = ({greeting}) => {
-    const onAddParent = (cantidad) => {
-        console.log(`Se agregó al carrito ${cantidad} productos`);
-    }
-
     const [products, setProducts] = useState([]);
 
     const {categoryId} = useParams();

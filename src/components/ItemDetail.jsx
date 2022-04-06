@@ -1,10 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button, CardMedia, CardContent, CardActions } from '@mui/material';
 import { Card } from '@mui/material';
 import { Box } from "@mui/system";
 import Typography from '@mui/material/Typography';
+import ItemCount from '../components/ItemCount';
 
 const ItemDetail = ({product}) => {
+    const onAddParent = (cantidad) => {
+        console.log(`Se agregó al carrito ${cantidad} productos`);
+        setCarrito(cantidad);
+    }
+
+    const [carrito, setCarrito] = useState(0);
+
+    let action;
+
+    if (carrito === 0){
+        action = <ItemCount stock={product.stock} initial={1} onAdd={onAddParent} />
+    }
+    else{
+        action = <Button variant="outlined" color="secondary" href={"/cart"}>Terminar mi Compra</Button>
+    }
+
     return (
         <>
             <Card variant="outlined" sx={{minWidth: 200, maxWidth: 900, align: 'center', margin: 1}}>
@@ -35,7 +52,7 @@ const ItemDetail = ({product}) => {
                         </Typography>
 
                         <CardActions>
-                            <Button variant="outlined" color="secondary"  >Comprar ahora</Button>
+                            {action}
                         </CardActions>
                     </Box>
                 </CardContent>
