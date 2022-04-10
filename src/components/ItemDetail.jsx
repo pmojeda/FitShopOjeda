@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import { Button, CardMedia, CardContent, CardActions } from '@mui/material';
 import { Card } from '@mui/material';
 import { Box } from "@mui/system";
@@ -7,15 +7,22 @@ import ItemCount from '../components/ItemCount';
 import {contexto} from "../context/CartContext";
 
 const ItemDetail = ({product}) => {
-    const {addItem} = useContext(contexto);
+    const {addItem, items} = useContext(contexto);
     const [carrito, setCarrito] = useState(0);
 
     const onAddParent = (cantidad) => {
         console.log(`Se agregó al carrito ${cantidad} productos del productId: ${product.id} `);
-        
+
         addItem(product, cantidad);
         setCarrito(cantidad);
     }
+
+    //Sólo para verificar q se haya agregado el item correctamente
+    useEffect(() => {
+        console.log("Effect-items:")
+        console.log(items);
+        console.log(items.length);
+      }, [items]);
 
     let action;
 
