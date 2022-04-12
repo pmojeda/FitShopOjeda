@@ -8,13 +8,13 @@ import {contexto} from "../context/CartContext";
 
 const ItemDetail = ({product}) => {
     const {addItem, items} = useContext(contexto);
-    const [carrito, setCarrito] = useState(0);
+    const [finalized, setFinalized] = useState(false);
 
     const onAddParent = (cantidad) => {
         console.log(`Se agregó al carrito ${cantidad} productos del productId: ${product.id} `);
 
         addItem(product, cantidad);
-        setCarrito(cantidad);
+        setFinalized(true);
     }
 
     //Sólo para verificar q se haya agregado el item correctamente
@@ -23,15 +23,6 @@ const ItemDetail = ({product}) => {
         console.log(items);
         console.log(items.length);
       }, [items]);
-
-    let action;
-
-    if (carrito === 0){
-        action = <ItemCount stock={product.stock} initial={1} onAdd={onAddParent} />
-    }
-    else{
-        action = <Button variant="outlined" color="secondary" href={"/cart"}>Terminar mi Compra</Button>
-    }
 
     return (
         <>
@@ -63,7 +54,14 @@ const ItemDetail = ({product}) => {
                         </Typography>
 
                         <CardActions>
-                            {action}
+                            { ! finalized ?
+                                (
+                                    <ItemCount stock={product.stock} initial={1} onAdd={onAddParent} />
+                                ) : 
+                                (
+                                    <Button variant="outlined" color="secondary" href={"/cart"}>Terminar mi Compra</Button>
+                                )                            
+                            }
                         </CardActions>
                     </Box>
                 </CardContent>
