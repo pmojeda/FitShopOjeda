@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 /*import ItemCount from "../components/ItemCount";*/
 import ItemList from "./ItemList";
 import Typography from '@mui/material/Typography';
