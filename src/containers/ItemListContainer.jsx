@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-/*import ItemCount from "../components/ItemCount";*/
 import ItemList from "./ItemList";
 import Typography from '@mui/material/Typography';
 import {useParams} from "react-router-dom";
@@ -13,7 +12,6 @@ const ItemListContainer = ({greeting}) => {
 
     const promiseProducts = new Promise((resolve, reject) =>{
         setTimeout(()=>{
-            console.log('Resolviendo...')
             resolve(initialProducts);
         }, 2000)
     });
@@ -25,9 +23,7 @@ const ItemListContainer = ({greeting}) => {
             }
             else {
                 setProducts(prodList);
-            }
-            
-            console.log('Resuelto!');
+            }            
         })
         .catch ((error) => {
             console.log(`Error: ${error}`)

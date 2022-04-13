@@ -1,10 +1,11 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, {useState, useContext} from "react";
 import { Button, CardMedia, CardContent, CardActions } from '@mui/material';
 import { Card } from '@mui/material';
 import { Box } from "@mui/system";
 import Typography from '@mui/material/Typography';
 import ItemCount from '../components/ItemCount';
 import {contexto} from "../context/CartContext";
+import {Link} from "react-router-dom";
 
 const ItemDetail = ({product}) => {
     const {addItem, items} = useContext(contexto);
@@ -16,14 +17,7 @@ const ItemDetail = ({product}) => {
         addItem(product, cantidad);
         setFinalized(true);
     }
-
-    //Sólo para verificar q se haya agregado el item correctamente
-    useEffect(() => {
-        console.log("Effect-items:")
-        console.log(items);
-        console.log(items.length);
-      }, [items]);
-
+  
     return (
         <>
             <Card variant="outlined" sx={{minWidth: 200, maxWidth: 900, align: 'center', margin: 1}}>
@@ -59,7 +53,9 @@ const ItemDetail = ({product}) => {
                                     <ItemCount stock={product.stock} initial={1} onAdd={onAddParent} />
                                 ) : 
                                 (
-                                    <Button variant="outlined" color="secondary" href={"/cart"}>Terminar mi Compra</Button>
+                                    <Link to="/cart" style={{ textDecoration: 'none' }}>
+                                        <Button variant="outlined" color="secondary">Terminar mi Compra</Button>
+                                    </Link>
                                 )                            
                             }
                         </CardActions>

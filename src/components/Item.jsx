@@ -3,6 +3,7 @@ import { Button } from '@mui/material';
 import { Card } from '@mui/material';
 import { Box } from "@mui/system";
 import { CardMedia} from '@mui/material';
+import {Link} from "react-router-dom";
 
 const Item = ({product}) => {
     return (
@@ -19,9 +20,11 @@ const Item = ({product}) => {
 
                     <p><span>${product.price}</span></p>
 
-                    <Button variant="outlined" color="secondary" href={"/item/"+product.id} > 
-                        VER DETALLE
-                    </Button>
+                    <Link to={"/item/"+product.id} style={{ textDecoration: 'none' }}>
+                        <Button variant="outlined" color="secondary" > 
+                            VER DETALLE
+                        </Button>
+                    </Link>
                 </Box>
             </Card>
         </>
