@@ -32,7 +32,7 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <>
-            <Typography component="div" variant="h5">
+            <Typography variant="h5">
                 {greeting}
             </Typography>
 
