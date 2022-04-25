@@ -86,8 +86,11 @@ export const Cart = () => {
                         </TableContainer>
                     </Box>
 
-                    <Box sx={{margin: 3, textAlign: 'center'}}>                        
+                    <Box sx={{margin: 5, textAlign: 'center'}}>                        
                         <Button variant="outlined" color="secondary" onClick={() => clear()}>Vaciar Carrito</Button>
+                        <Link to="/CartOrder" style={{ textDecoration: 'none' }}>
+                            <Button variant="outlined" color="secondary">Finalizar Compra</Button>
+                        </Link>
                     </Box>
                 </>
             }

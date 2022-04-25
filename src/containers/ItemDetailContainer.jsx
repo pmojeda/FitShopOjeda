@@ -26,7 +26,8 @@ const ItemDetailContainer = () => {
         getDoc(refDoc)
         .then((result) => {
             console.log(result);
-            setProduct(result.data());            
+            console.log(result.data());
+            setProduct({id:productId, ...result.data()});            
         })
         .catch ((error) => {
             console.log(`Error: ${error}`)
