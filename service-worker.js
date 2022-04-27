@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/FitShopOjeda/precache-manifest.5aeea62871b58523b6be4a065380bf60.js"
+  "/FitShopOjeda/precache-manifest.223464d30660c367ea7cb6b74d6808b1.js"
 );
 
 workbox.clientsClaim();
