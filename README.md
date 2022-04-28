@@ -24,3 +24,7 @@ Para el desarrollo del Frontend se utilizó:
 - [Firebase] - Módulo para conectarse a la Base de Datos Firestore
 - [gh-pages] - Módulo para realizar un despliegue directamente en github pages
 
+### Observaciones
+
+- Se remplazó el uso del componente BrowserRouter con el componente HashRouter para que pueda funcionar en un Hosting que contenga directorios virtuales sin tener que modificar el path para el ruteo especificado en cada uso del componente Route.
+
