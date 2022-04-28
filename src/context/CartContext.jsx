@@ -9,13 +9,10 @@ const CartProvider = ({children}) => {
     const addItem = (item, quantity) => {
         if (! isInCart(item.id))
         {
-            console.log("Nuevo Item...");
             const newItem = {id: item.id, title: item.title, price: item.price, quantity: quantity};
-            console.log(newItem);
-            setItems([...items, newItem]);  //Agrego el nuevo Item
+            setItems([...items, newItem]);  
         }
         else{
-            console.log("Sumando a Item preexistente...");
             const oldIndex = items.findIndex(x => x.id === item.id);
             const aux = [...items];
             aux[oldIndex].quantity += quantity;
@@ -24,7 +21,6 @@ const CartProvider = ({children}) => {
     }
 
     const removeItem = (itemId) => {
-        console.log(`Eliminar Item ${itemId}`);
         setItems(items.filter(x => x.id !== itemId));
     }
 
@@ -33,12 +29,31 @@ const CartProvider = ({children}) => {
     }
 
     const isInCart = (itemId) => {
-        console.log(`Buscar Item ${itemId}`);
         return (items.findIndex(x => x.id === itemId) >= 0)
     }
 
+    const totalProducts = () => {
+        let total = 0;
+
+        items.forEach(item => {
+            total += (item.quantity);
+        });
+
+        return total;
+    }
+
+    const totalCart = () => {
+        let total = 0;
+
+        items.forEach(item => {
+            total += (item.quantity * item.price);
+        });
+
+        return total;
+    }
+
     return (
-        <Provider value={{items, addItem, removeItem, clear}}>{children}</Provider>
+        <Provider value={{items, addItem, removeItem, clear, totalCart, totalProducts}}>{children}</Provider>
     )
 }
 

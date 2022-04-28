@@ -2,23 +2,12 @@ import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import Typography from '@mui/material/Typography';
 import {useParams} from "react-router-dom";
-//import {initialProducts} from "../mocks/InitialProducts";
 import {db} from "../firebase/firebase";
 import {getDocs, collection, query, where} from "firebase/firestore";
 
 const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState([]);
     const {categoryId} = useParams();
-
-    /* VERSION ANTERIOR A LA IMPLEMENTACION DE FIREBASE
-    const promiseProducts = new Promise((resolve, reject) =>{
-        setTimeout(()=>{
-            resolve(initialProducts);
-        }, 2000)
-    });
-    */
-
-    console.log(db);
 
     useEffect(() => {
         const productList = collection(db, "ItemCollection");
@@ -34,26 +23,11 @@ const ItemListContainer = ({greeting}) => {
                 return product;
             })
 
-            console.log(lista);
             setProducts(lista);
         })
         .catch ((error) => {
             console.log(`Error: ${error}`)
-        })
-        
-        /* VERSION ANTERIOR A LA IMPLEMENTACION DE FIREBASE
-        promiseProducts.then((prodList) => {
-            if (categoryId){
-                setProducts(prodList.filter( x => x.categoryId === categoryId))
-            }
-            else {
-                setProducts(prodList);
-            }            
-        })
-        .catch ((error) => {
-            console.log(`Error: ${error}`)
-        })
-        */
+        })        
     }, [categoryId]);
 
     return (

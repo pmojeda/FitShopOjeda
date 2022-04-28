@@ -8,12 +8,10 @@ import {contexto} from "../context/CartContext";
 import {Link} from "react-router-dom";
 
 const ItemDetail = ({product}) => {
-    const {addItem, items} = useContext(contexto);
+    const {addItem} = useContext(contexto);
     const [finalized, setFinalized] = useState(false);
 
     const onAddParent = (cantidad) => {
-        console.log(`Se agregó al carrito ${cantidad} productos del productId: ${product.id} `);
-
         addItem(product, cantidad);
         setFinalized(true);
     }
@@ -67,8 +65,7 @@ const ItemDetail = ({product}) => {
                         component="img"
                         sx={{width: 100, height:75, marginRight:1}}             
                         image={product.pictureUrls[0]}
-                        border="1px solid"
-                        
+                        border="1px solid"                        
                     />
                     <CardMedia
                         component="img"

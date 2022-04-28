@@ -4,20 +4,7 @@ import Badge from '@mui/material/Badge';
 import {contexto} from "../context/CartContext";
 
 const CartWidget = () => {
-    const {items} = useContext(contexto);
-
-    const totalProducts = () => {
-        let total = 0;
-
-        items.forEach(item => {
-            total += (item.quantity);
-        });
-
-        console.log("cant:");
-        console.log(total);
-
-        return total;
-    }
+    const {totalProducts} = useContext(contexto);
 
     return (
         <>

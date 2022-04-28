@@ -14,17 +14,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Typography from '@mui/material/Typography';
 
 export const Cart = () => {
-    const {items, removeItem, clear} = useContext(contexto);
-
-    const totalCarrito = () => {
-        let total = 0;
-
-        items.forEach(item => {
-            total += (item.quantity * item.price);
-        });
-
-        return total;
-    }
+    const {items, removeItem, clear, totalCart} = useContext(contexto);
 
     return (
         <>
@@ -79,7 +69,7 @@ export const Cart = () => {
 
                                     <TableRow>
                                         <TableCell colSpan={3}>Total</TableCell>
-                                        <TableCell align="right">{totalCarrito()}</TableCell>
+                                        <TableCell align="right">{totalCart()}</TableCell>
                                     </TableRow>
                                 </TableBody>
                             </Table>
